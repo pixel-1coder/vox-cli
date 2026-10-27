@@ -39,6 +39,8 @@ Examples:
     parser.add_argument("--list-providers", action="store_true", help="List available providers")
     parser.add_argument("--list-models", action="store_true", help="List models for provider")
     parser.add_argument("--auth", help="Authenticate with provider (openrouter, grok, etc.)")
+    parser.add_argument("--config-oauth", nargs=3, metavar=("PROVIDER", "CLIENT_ID", "CLIENT_SECRET"),
+                        help="Configure OAuth credentials: --config-oauth openrouter <client_id> <client_secret>")
     parser.add_argument("--config", help="Path to config file")
     parser.add_argument("--no-stream", action="store_true", help="Disable streaming")
     parser.add_argument("--temperature", type=float, default=0.7, help="Sampling temperature")
@@ -58,6 +60,18 @@ Examples:
 
     if args.list_providers:
         list_providers()
+        return
+
+    if args.config_oauth:
+        provider, client_id, client_secret = args.config_oauth
+        config.set_provider_config(provider, {
+            **config.get_provider_config(provider),
+            "oauth_client_id": client_id,
+            "oauth_client_secret": client_secret,
+        })
+        config.save()
+        print(f"[✓] OAuth credentials saved for {provider}")
+        print(f"Run 'vox --auth {provider}' to authenticate")
         return
 
     if args.auth:

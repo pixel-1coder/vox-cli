@@ -5,11 +5,19 @@ Terminal UI for vox-cli chat interface
 import asyncio
 import sys
 import os
-import readline
 import json
 from datetime import datetime
 from typing import List, Optional
 from vox.providers import Message
+
+# Windows-compatible readline
+try:
+    import readline
+except ImportError:
+    try:
+        import pyreadline3 as readline
+    except ImportError:
+        readline = None
 
 
 class TerminalChat:

@@ -21,7 +21,12 @@ class Config:
             "openrouter": {
                 "api_key": "",
                 "default_model": "cognitivecomputations/dolphin-mixtral-8x7b",
-                "auth_method": "api_key"  # or "oauth"
+                "auth_method": "api_key",  # or "oauth"
+                "oauth_client_id": "",
+                "oauth_client_secret": "",
+                "oauth_token": "",
+                "refresh_token": "",
+                "oauth_expires_at": 0
             },
             "grok": {
                 "api_key": "",
