@@ -28,9 +28,6 @@ vox-cli is a terminal-based LLM client that connects to multiple providers (Open
 git clone https://github.com/vox-cli/vox-cli
 cd vox-cli
 pip install -e .
-
-# Or install from PyPI (when published)
-pip install vox-cli
 ```
 
 ### Configure
