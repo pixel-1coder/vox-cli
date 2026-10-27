@@ -54,8 +54,13 @@ vox -p openrouter -m cognitivecomputations/dolphin-mixtral-8x7b
 vox -p grok
 vox -p ollama -m deepseek-coder:33b
 
-# List available models for provider
+# List available models for provider (CLI flag)
 vox --list-models -p openrouter
+
+# Interactive commands (inside chat)
+/model_list        # List all models (free/paid, uncensored/regular)
+/switchmodels      # Interactive model picker
+/togglefilters     # Switch Unfiltered ↔ Censored mode
 ```
 
 ## Providers
@@ -78,6 +83,9 @@ vox --list-models -p openrouter
 | `/clear` | Reset conversation context (keeps system prompt) |
 | `/save` | Export chat to JSON file |
 | `/model <name>` | Switch model |
+| `/model_list` | List all models (free/paid, uncensored/regular) |
+| `/switchmodels` | Interactive model picker |
+| `/togglefilters` | Switch Unfiltered ↔ Censored |
 | `/provider` | Show current provider/model |
 | `/help` | Show help |
 | `Up/Down` | Navigate history |
