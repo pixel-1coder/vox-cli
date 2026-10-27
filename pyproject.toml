@@ -1,0 +1,69 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vox-cli"
+version = "0.1.0"
+description = "Multi-provider unrestricted terminal LLM client"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "vox-cli", email = "vox-cli@example.com"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Terminals",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "aiohttp>=3.9.0",
+    "aiofiles>=23.0.0",
+    "colorama>=0.4.6",
+    "pyyaml>=6.0.1",
+    "click>=8.1.0",
+    "rich>=13.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.5.0",
+]
+
+[project.scripts]
+vox = "vox.main:main"
+
+[project.urls]
+Homepage = "https://github.com/vox-cli/vox-cli"
+Repository = "https://github.com/vox-cli/vox-cli"
+Issues = "https://github.com/vox-cli/vox-cli/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["vox*"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310", "py311", "py312"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+select = ["E", "F", "I", "UP", "W"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_ignores = true
+disallow_untyped_defs = true
