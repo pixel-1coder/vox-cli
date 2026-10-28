@@ -301,6 +301,13 @@ Be helpful but responsible. Decline inappropriate requests with a brief explanat
         self.stream = stream
         self.verbose = verbose
         self.history: List[Message] = []
+        self.session_title = None
+        self._attachments = []
+        self._images = []
+        self._last_assistant = ""
+        self._cached_models = []
+        self.show_reasoning = False
+        self._mcp_manager = None
 
         # Filter state: True = unfiltered, False = censored
         self.unfiltered_mode = True
@@ -313,14 +320,11 @@ Be helpful but responsible. Decline inappropriate requests with a brief explanat
         # System prompt
         self.system_prompt = system_prompt or self.UNFILTERED_PROMPT
 
-        if self.system_prompt:
-            # Put system prompt first and ensure it's very strong
-            self.history = [Message(role="system", content=self.system_prompt)] + self.history
-
         # Load session if resuming
         if session_id:
             self._load_session(session_id)
         else:
+            self.history = []
             if self.system_prompt:
                 self.history.append(Message(role="system", content=self.system_prompt))
 
