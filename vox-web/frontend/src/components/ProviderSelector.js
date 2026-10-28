@@ -65,9 +65,9 @@ const PROVIDERS = [
 ];
 
 function ProviderSelector({ currentProvider, onProviderChange, isOpen, onClose }) {
-  if (!isOpen) return null;
-
   const [hovered, setHovered] = useState(null);
+
+  if (!isOpen) return null;
 
   return (
     <div className="provider-selector-modal" onClick={onClose}>

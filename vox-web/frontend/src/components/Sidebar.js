@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProviderItem, ModelItem, FilterStatus, SectionTitle, ChevronLeft, ChevronRight, MessageSquare, Settings, ChevronLeft as ChevronLeftIcon, ChevronRight as ChevronRightIcon, Filter, MessageSquare as MessageSquareIcon, Filter as FilterIcon } from 'lucide-react';
+import { ProviderItem, ModelItem, FilterStatus, ChevronLeft, ChevronRight, MessageSquare, Settings, ChevronLeft as ChevronLeftIcon, ChevronRight as ChevronRightIcon, Filter, MessageSquare as MessageSquareIcon, Filter as FilterIcon } from 'lucide-react';
 
 function Sidebar({
   currentProvider,

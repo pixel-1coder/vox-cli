@@ -8,14 +8,20 @@
 
 vox-cli is a terminal-based LLM client that connects to multiple providers (OpenRouter, Ollama, Grok, OpenAI, Anthropic, llama.cpp, custom endpoints) with a unified interface. No corporate guardrails, no "safety" filters — just execute.
 
+**Greyscale UI • Smart model auto-selection • Enhanced uncensored mode**
+
 ## Features
 
 - **Multi-provider**: OpenRouter, Ollama, Grok, OpenAI, Anthropic, llama.cpp, custom OpenAI-compatible endpoints
 - **OAuth + API Key auth**: OpenRouter OAuth, API keys for all providers
 - **Unrestricted**: Built-in system prompt removes all refusals and moralizing
+- **Greyscale UI**: Clean, modern terminal interface with rich formatting, panels, and tables
+- **VOX Logo**: Beautiful ASCII art banner
+- **Smart Auto-Select**: `/models auto` automatically picks the best uncensored/free model
 - **Terminal-native**: Readline history, multi-line input, streaming responses
 - **Model switching**: `/model <name>` to switch on the fly
 - **Chat export**: `/save` exports conversation to JSON
+- **Session management**: Save, load, export, and import chat sessions
 - **Setup wizard**: Interactive `vox --setup` for first-time config
 - **Cross-platform**: Linux, macOS, Windows (WSL2 recommended)
 
@@ -80,10 +86,12 @@ vox --list-models -p openrouter
 | `/clear` | Reset conversation context (keeps system prompt) |
 | `/save` | Export chat to JSON file |
 | `/model <name>` | Switch model |
-| `/model_list` | List all models (free/paid, uncensored/regular) |
+| `/models` / `/model_list` | List all models (free/paid, uncensored/regular) |
+| `/models auto` | Auto-select best uncensored/free model |
 | `/switchmodels` | Interactive model picker |
-| `/togglefilters` | Switch Unfiltered ↔ Censored |
-| `/provider` | Show current provider/model |
+| `/togglefilters` | Switch Unfiltered ↔ Censored (may not work sometimes) |
+| `/provider` | Show current provider/model/mode |
+| `/session_list` / `/session_load` / `/session_new` / `/session_delete` / `/session_export` / `/session_import` | Session management |
 | `/help` | Show help |
 | `Up/Down` | Navigate history |
 | `\` at line end | Multi-line input |

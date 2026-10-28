@@ -20,7 +20,7 @@ function ModelSelector({
     { id: 'free', label: 'Free', icon: <Tag size={14} /> },
     { id: 'free-uncensored', label: 'Free Uncensored', icon: <Unlock size={14} /> },
     { id: 'paid', label: 'Paid', icon: <DollarSign size={14} /> },
-    { id: 'uncensored', label: 'Uncensored', icon: <Zap size={14} />,
+    { id: 'uncensored', label: 'Uncensored', icon: <Zap size={14} /> },
   ];
 
   const filterModels = (models) => {

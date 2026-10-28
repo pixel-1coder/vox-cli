@@ -24,7 +24,7 @@ function Header({
     grok: ['grok-2', 'grok-2-mini'],
     openai: ['gpt-4o', 'gpt-4o-mini', 'gpt-4-turbo', 'gpt-3.5-turbo'],
     anthropic: ['claude-3.5-sonnet', 'claude-3-opus', 'claude-3-haiku'],
-    llama-cpp: ['llama-3.1-8b', 'llama-3.1-70b', 'mistral-7b', 'codellama-34b'],
+    'llama-cpp': ['llama-3.1-8b', 'llama-3.1-70b', 'mistral-7b', 'codellama-34b'],
   };
 
   const currentProviderModels = providerModels[currentProvider] || [];
