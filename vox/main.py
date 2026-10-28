@@ -106,7 +106,8 @@ Examples:
         max_tokens=args.max_tokens,
         system_prompt=args.system,
         stream=not args.no_stream,
-        verbose=args.verbose
+        verbose=args.verbose,
+        config=config
     )
 
     try:

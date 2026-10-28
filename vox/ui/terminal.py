@@ -300,9 +300,11 @@ Be helpful but responsible. Decline inappropriate requests with a brief explanat
         stream: bool = True,
         verbose: bool = False,
         session_id: Optional[str] = None,
-        auto_save: bool = True
+        auto_save: bool = True,
+        config: Optional[Any] = None
     ):
         self.provider = provider
+        self.config = config
         self.model = model
         self.temperature = temperature
         self.max_tokens = max_tokens
@@ -612,6 +614,11 @@ Be helpful but responsible. Decline inappropriate requests with a brief explanat
         if user_input.startswith("/model "):
             new_model = user_input.split(" ", 1)[1].strip()
             self.model = new_model
+            if self.config:
+                try:
+                    self.config.set(f"providers.{self.provider.name}.default_model", new_model)
+                except Exception:
+                    pass
             if HAS_RICH:
                 console.print(f"[grey70][Model set to: {new_model}][/grey70]")
             else:
@@ -1232,6 +1239,11 @@ Be helpful but responsible. Decline inappropriate requests with a brief explanat
             # Switch model
             old_model = self.model
             self.model = getattr(selected_model, 'id', str(selected_model))
+            if self.config:
+                try:
+                    self.config.set(f"providers.{self.provider.name}.default_model", getattr(selected_model, 'id', str(selected_model)))
+                except Exception:
+                    pass
             if HAS_RICH:
                 console.print(f"[grey70][Model switched: {old_model} → {self.model}][/grey70]")
             else:
