@@ -160,15 +160,64 @@ vox/
     └── setup_wizard.py     # Interactive setup
 ```
 
+## FAQ
+
+| Issue | Solution |
+|-------|----------|
+| **Model not found** | Run `/model_list` inside chat or `vox --list-models -p <provider>` to see available models. Use exact model ID from the list. |
+| **Auth failed** | Verify API key in config. For OpenRouter: `sk-or-...`. Run `vox --setup` to re-enter credentials. |
+| **Slow responses** | Reduce `max_tokens`, lower `temperature`, disable `stream`. Local models: ensure GPU/CPU resources available. |
+| **Connection refused** | Check provider host/port. Ollama: `http://localhost:11434`. Verify service is running. |
+| **Model not responding** | Try `/clear` to reset context. Check `max_tokens` not too low. Switch to simpler model. |
+
+## Contributing
+
+### Adding a Provider
+1. Create `vox/providers/your_provider.py` inheriting from `BaseProvider`
+2. Implement required methods: `chat()`, `list_models()`, `authenticate()`
+3. Register in `vox/providers/manager.py`
+4. Add config schema in `config.py`
+
+### Code Style
+```bash
+# Format
+black vox/
+ruff check vox/
+
+# Type check
+mypy vox/
+
+# Tests
+pytest
+```
+
+### PR Guidelines
+- Small, focused changes
+- Update docs/README for new features
+- Tests for new providers
+- No breaking changes without major version bump
+
+## Security
+
+- **API keys** stored in config file (user-readable only, `chmod 600` recommended)
+- **Local-only mode**: Use Ollama/llama.cpp providers — zero data leaves your machine
+- **No telemetry** — Zero logging, analytics, or tracking
+- **API keys** never logged or sent except to target provider
+- **Config file** permissions: `chmod 600 ~/.config/vox-cli/config.json` (Linux/macOS)
+
+### Local-Only Mode
+```bash
+# Fully offline - no external calls
+vox -p ollama -m llama3.1:8b
+# Or llama.cpp
+vox -p llama-cpp -m llama-3.1-8b
+```
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) or [GitHub Releases](https://github.com/pixel-1coder/vox-cli/releases) for version history.
+
 ## Why vox-cli?
-
-- **You own the conversation** — No logging, no telemetry, no cloud storage unless you choose a cloud provider
-- **Unrestricted by default** — System prompt explicitly removes all refusals
-- **Provider agnostic** — Switch between local and cloud seamlessly
-- **Terminal-first** — Built for developers who live in the shell
-- **Extensible** — Add new providers in ~50 lines of code
-
-## License
 
 MIT License — Use freely, modify freely, distribute freely.
 
