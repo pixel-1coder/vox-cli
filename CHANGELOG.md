@@ -15,6 +15,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Enhanced model display** - Beautiful tables with pricing, context, and model type indicators
 - **VOX-CLI context in system prompt** - AI now knows it's running in vox-cli with available commands and features
 - **Toggle note** - `/togglefilters` now shows "(this may not work sometimes)"
+- **QoL commands** - `/regen`, `/retry` (regenerate last response), `/continue` (continue truncated response), `/edit` (edit last message and regenerate), `/copy` (copy last response to clipboard)
+- **Power user commands** - `/attach <file>` (attach file content to context), `/attachimg <image>` (attach image for vision models), `/session_search <q>` (search saved sessions)
+- **Shell passthrough** - `!<cmd>` executes shell commands and feeds output to the AI
+- **Thinking spinner** - Rich live spinner while waiting for response
+- **Response rendering** - Markdown rendering via rich for AI responses
 
 ### Changed
 - **Uncensored mode** - Significantly stronger system prompt with explicit override instructions
@@ -28,10 +33,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Filter toggle between Unfiltered and Censored modes
 - README documentation for all new commands
 
-### Changed
-- Removed PyPI install option from README (source-only distribution)
-- Updated README with new command documentation
-
 ### Fixed
 - OpenRouter model `cognitivecomputations/dolphin-mixtral-8x7b` deprecated → replaced with current models
 - React web UI compilation errors fixed (Header, ModelSelector, Sidebar, ProviderSelector, ChatArea, App)
@@ -40,6 +41,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Header.js `llama-cpp` key quoting
 - Sidebar.js duplicate SectionTitle import
 - ModelSelector categories array syntax
+- **Terminal crash fix** - Added missing `session_title`, `_attachments`, `_images`, `_last_assistant`, `_cached_models`, `show_reasoning`, `_mcp_manager` attributes to `TerminalChat.__init__`
+- **Terminal crash fix** - Cleaned duplicate system-prompt injection logic in `TerminalChat.__init__`
+- **Console encoding fix** - Forced UTF-8 output on `sys.stdout`/`sys.stderr` to fix Windows banner/codec errors
+
+### Added (continued - error handling & logs)
+- **Error logging** - Errors now logged to `~/.vox_error.log` via `_log_error`
+- **`/logs` command** - View error logs from the CLI
+- **Chat loop resilience** - Wrapped command handling and message sending in try/except with error logging
+- **MCP disabled** - Removed MCP manager integration pending re-evaluation
+
+### Added (continued - power user / UI UX)
+- **Markdown + syntax rendering** - Rich `Markdown` + `Syntax` for AI responses
+- **Status bar** - Live token count, cost estimate, mode, attachment count
+- **Session auto-title** - Auto-generate session title from first user message
 
 ## [0.1.0] - 2024-XX-XX
 
@@ -72,6 +87,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 |---------|------|-------|
 | 0.1.0 | 2024-XX-XX | Initial release |
 | 0.1.1 | 2024-XX-XX | Bug fixes, new commands |
+| Unreleased | 2026-10-28 | Greyscale UI, /models auto, QoL/power user, error handling, console fix |
 
 ---
 
