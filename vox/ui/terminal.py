@@ -302,6 +302,7 @@ Be helpful but responsible. Decline inappropriate requests with a brief explanat
         self.verbose = verbose
         self.history: List[Message] = []
         self.session_title = None
+        self._mcp_manager = None
         self._attachments = []
         self._images = []
         self._last_assistant = ""
