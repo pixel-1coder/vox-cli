@@ -179,25 +179,46 @@
     <section class="section" id="install">
       <div class="section-head">
         <span class="eyebrow">install</span>
-        <h2>Two minutes, zero excuses.</h2>
-        <p>Free to build. No PalaceHub subscription. Bring a provider account.</p>
+        <h2>Install.</h2>
+        <p>The best AI to make cheats.</p>
       </div>
       <div class="install-grid">
         <div class="code-card">
           <div class="code-head">
             <span class="code-title">bash</span>
-            <button class="copy-btn" data-copy="pip install vox-cli">Copy</button>
+            <button class="copy-btn" data-copy="# Clone and install&#10;git clone https://github.com/pixel-1coder/vox-cli.git&#10;cd vox-cli&#10;pip install -e .&#10;&#10;# Interactive setup wizard (recommended)&#10;vox --setup&#10;&#10;# Or manual config&#10;vox --provider ollama --model llama3.1:8b">Copy</button>
           </div>
-          <pre><code>pip install vox-cli</code></pre>
+          <pre><code># Clone and install
+git clone https://github.com/pixel-1coder/vox-cli.git
+cd vox-cli
+pip install -e .
+
+# Interactive setup wizard (recommended)
+vox --setup
+
+# Or manual config
+vox --provider ollama --model llama3.1:8b</code></pre>
         </div>
         <div class="code-card">
           <div class="code-head">
             <span class="code-title">powershell</span>
-            <button class="copy-btn" data-copy="git clone https://github.com/pixel-1coder/vox-cli.git&amp;&amp; cd vox-cli&amp;&amp; pip install -e .">Copy</button>
+            <button class="copy-btn" data-copy="# Start chatting&#10;vox&#10;&#10;# Use specific provider/model&#10;vox -p openrouter -m cognitivecomputations/dolphin-mixtral-8x7b&#10;vox -p grok&#10;vox -p ollama -m deepseek-coder:33b&#10;&#10;# List available models for provider (CLI flag)&#10;vox --list-models -p openrouter&#10;&#10;# Interactive commands (inside chat)&#10;/model_list        # List all models (free/paid, uncensored/regular)&#10;/switchmodels      # Interactive model picker&#10;/togglefilters     # Switch Unfiltered ↔ Censored mode">Copy</button>
           </div>
-          <pre><code>git clone https://github.com/pixel-1coder/vox-cli.git
-cd vox-cli
-pip install -e .</code></pre>
+          <pre><code># Start chatting
+vox
+
+# Use specific provider/model
+vox -p openrouter -m cognitivecomputations/dolphin-mixtral-8x7b
+vox -p grok
+vox -p ollama -m deepseek-coder:33b
+
+# List available models for provider (CLI flag)
+vox --list-models -p openrouter
+
+# Interactive commands (inside chat)
+/model_list        # List all models (free/paid, uncensored/regular)
+/switchmodels      # Interactive model picker 
+/togglefilters     # Switch Unfiltered ↔ Censored mode</code></pre>
         </div>
       </div>
     </section>
