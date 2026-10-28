@@ -215,7 +215,7 @@ vox -p llama-cpp -m llama-3.1-8b
 
 ## Changelog
 
-See [CHANGELOG.md](CHANGELOG.md) or [GitHub Releases](https://github.com/pixel-1coder/vox-cli/releases) for version history.
+See [CHANGELOG.md](CHANGELOG.md)
 
 ## Why vox-cli?
 
