@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VOX CLI — Your AI, in the terminal</title>
+  <meta name="description" content="VOX is a terminal-based AI client. Greyscale UI, uncensored mode, multi-provider. Understand a project, write code, and run tests. All from your terminal." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-glow bg-glow-a" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-b" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="brand" href="#top">
+      <span class="brand-mark">V</span>
+      <span class="brand-name">vox</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#commands">Commands</a>
+      <a href="#providers">Providers</a>
+      <a href="#install">Install</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="#install">Get VOX</a>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="badge"><span class="badge-dot"></span>vox-cli · terminal ai</div>
+      <h1>Your AI,<br />in the <span class="accent">terminal</span>.</h1>
+      <p class="lede">Understand a project, write code, and run tests. All from your terminal.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#install">Get VOX</a>
+        <a class="btn btn-ghost" href="#commands">Explore commands</a>
+      </div>
+      <p class="hero-meta">Free to build · Open source · MIT · greyscale by default</p>
+
+      <div class="terminal" id="terminal" aria-hidden="true">
+        <div class="term-bar">
+          <span class="t-dot t-r"></span>
+          <span class="t-dot t-y"></span>
+          <span class="t-dot t-g"></span>
+          <span class="t-title">vox — zsh</span>
+        </div>
+        <div class="term-body" id="termBody">
+          <div class="term-line term-input">
+            <span class="prompt">vox&gt;</span>
+            <span id="termCursor">▌</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMANDS -->
+    <section class="section" id="commands">
+      <div class="section-head">
+        <span class="eyebrow">/commands</span>
+        <h2>Everything is a command.</h2>
+        <p>Power-user surface that stays invisible until you need it.</p>
+      </div>
+      <div class="cmd-grid">
+        <div class="cmd-card">
+          <div class="cmd-card-top">
+            <span class="cmd-pill">/models</span>
+            <span class="cmd-flag">auto</span>
+          </div>
+          <h3>List &amp; auto-select</h3>
+          <p>See every provider model, or let VOX pick the best one for the job.</p>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-card-top">
+            <span class="cmd-pill">/model</span>
+          </div>
+          <h3>Switch + remember</h3>
+          <p>Pick a model and it's saved. Next launch, VOX uses it again.</p>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-card-top">
+            <span class="cmd-pill">/switchmodels</span>
+          </div>
+          <h3>Move providers</h3>
+          <p>Cycle through provider + model combinations without leaving the chat.</p>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-card-top">
+            <span class="cmd-pill">/attach</span>
+          </div>
+          <h3>Context files</h3>
+          <p>Attach source files or screenshots into the conversation.</p>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-card-top">
+            <span class="cmd-pill">/regen</span>
+          </div>
+          <h3>Regenerate</h3>
+          <p>Spin the model again without losing the thread.</p>
+        </div>
+        <div class="cmd-card">
+          <div class="cmd-card-top">
+            <span class="cmd-pill">/logs</span>
+          </div>
+          <h3>Error log</h3>
+          <p>Tail what went wrong. Never die in the chat again.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+      <div class="section-head">
+        <span class="eyebrow">features</span>
+        <h2>Built different.</h2>
+        <p>A terminal AI client that respects your workflow.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
+          <h3>Greyscale UI</h3>
+          <p>A quiet monochrome interface that stays out of the way. Focus on the conversation, not the chrome.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3.4 8.4-7 10-3.6-1.6-7-5-7-10V6l7-3z"/><path d="M9.5 9.5l5 5M14.5 9.5l-5 5"/></svg></div>
+          <h3>Uncensored mode</h3>
+          <p>No content restrictions on responses or the system prompt. What the model knows, it uses.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="9" height="8" rx="2"/><rect x="12" y="4" width="9" height="12" rx="2"/><rect x="12" y="12" width="9" height="4" rx="2"/></svg></div>
+          <h3>Multi-provider</h3>
+          <p>OpenRouter, Groq, Google AI Studio, Mistral, Hugging Face and local models. One interface, every backend.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/><path d="M8 8h8M8 12h5"/></svg></div>
+          <h3>Context &amp; sessions</h3>
+          <p>Full session persistence, prompt editing, image and file context, session search.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><polyline points="12 19 18 13 12 7"/></svg></div>
+          <h3>Power-user commands</h3>
+          <p>/models auto, /attach, /regen, !shell, /copy. The CLI behaves like a tool, not a toy.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5v6c0 5-4 8.5-9 10-5-1.5-9-5-9-10V8l9-5z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Error handling</h3>
+          <p>Errors are logged and surfaced. Your session never crashes over a 404.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROVIDERS -->
+    <section class="section" id="providers">
+      <div class="section-head">
+        <span class="eyebrow">providers</span>
+        <h2>Every backend, one CLI.</h2>
+        <p>Bring your own provider key. Or run fully local.</p>
+      </div>
+      <div class="provider-grid">
+        <span class="provider-chip">OpenRouter</span>
+        <span class="provider-chip">Groq</span>
+        <span class="provider-chip">Google AI Studio</span>
+        <span class="provider-chip">Mistral</span>
+        <span class="provider-chip">Hugging Face</span>
+        <span class="provider-chip">Cerebras</span>
+        <span class="provider-chip">NVIDIA NIM</span>
+        <span class="provider-chip">Chutes</span>
+        <span class="provider-chip">Together</span>
+        <span class="provider-chip">Ollama</span>
+        <span class="provider-chip">LM Studio</span>
+        <span class="provider-chip">llama.cpp</span>
+        <span class="provider-chip">Custom endpoint</span>
+      </div>
+    </section>
+
+    <!-- INSTALL -->
+    <section class="section" id="install">
+      <div class="section-head">
+        <span class="eyebrow">install</span>
+        <h2>Two minutes, zero excuses.</h2>
+        <p>Free to build. No PalaceHub subscription. Bring a provider account.</p>
+      </div>
+      <div class="install-grid">
+        <div class="code-card">
+          <div class="code-head">
+            <span class="code-title">bash</span>
+            <button class="copy-btn" data-copy="pip install vox-cli">Copy</button>
+          </div>
+          <pre><code>pip install vox-cli</code></pre>
+        </div>
+        <div class="code-card">
+          <div class="code-head">
+            <span class="code-title">powershell</span>
+            <button class="copy-btn" data-copy="git clone https://github.com/pixel-1coder/vox-cli.git&amp;&amp; cd vox-cli&amp;&amp; pip install -e .">Copy</button>
+          </div>
+          <pre><code>git clone https://github.com/pixel-1coder/vox-cli.git
+cd vox-cli
+pip install -e .</code></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark">V</span>
+        <span class="brand-name">vox</span>
+      </a>
+      <p>Your AI, in the terminal.</p>
+      <p class="footer-dim">© 2026 vox-cli · MIT License · github.com/pixel-1coder/vox-cli</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
