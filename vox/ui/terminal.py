@@ -77,6 +77,14 @@ THINK_RE = re.compile(r"<think>(.*?)</think>", re.DOTALL | re.IGNORECASE)
 SESSION_DIR = os.path.expanduser("~/.vox_sessions")
 os.makedirs(SESSION_DIR, exist_ok=True)
 
+# Force UTF-8 output for console (Windows console often uses charmap/codepage)
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        if hasattr(_stream, "reconfigure"):
+            _stream.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
 
 class SessionManager:
     """Manages chat session persistence: save, load, export, import."""
