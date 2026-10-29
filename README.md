@@ -10,6 +10,8 @@ vox-cli is a terminal-based LLM client that connects to multiple providers (Open
 
 **Greyscale UI • Smart model auto-selection • Enhanced uncensored mode**
 
+**Website:** [pixel-1coder.github.io/vox-cli](https://pixel-1coder.github.io/vox-cli/)
+
 ## Features
 
 - **Multi-provider**: OpenRouter, Ollama, Grok, OpenAI, Anthropic, llama.cpp, custom OpenAI-compatible endpoints
